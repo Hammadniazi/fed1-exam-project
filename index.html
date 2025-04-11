@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech-Whiz</title>
     <link rel="stylesheet" href="./src/style.css" />
-    <script type="module" src="./src/main.mjs"></script>
+    <script type="module" src="./src/main.mjs" defer></script>
   </head>
   <body>
-    <header>
+    <header class="l-header">
       <nav class="container-navbar">
         <div class="nav-logo">
           <h1>Tech-Whiz</h1>
@@ -26,9 +26,12 @@
         </div>
       </nav>
     </header>
-    <main>
-      <h1>Hello World</h1>
+    <main class="l-main">
+      <section class="c-blog">
+        <h2>Latest Posts</h2>
+        <div class="grid-container" id="gridBlog"></div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="l-footer"><h2>Its a footer</h2></footer>
   </body>
 </html>
