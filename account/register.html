@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Tech-Whiz</title>
+    <link rel="stylesheet" href="../src/style.css" />
+    <link rel="stylesheet" href="../src/register.css" />
+    <script type="module" src="./src/main.mjs" defer></script>
+  </head>
+  <body>
+    <header class="l-header">
+      <nav class="container-navbar">
+        <div class="nav-logo">
+          <h1>Tech-Whiz</h1>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="/" style="display: none">Create Blog</a>
+          <a href="/">Login</a>
+          <a href="/">Register</a>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <main class="l-main">
+      <section class="register-container">
+        <div class="register-form-container">
+          <h2>Create an Account</h2>
+          <form class="register-form">
+            <div class="form-details">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <div class="form-details">
+              <label for="passward">Passward</label>
+              <input type="passward" name="passward" id="passward" required />
+            </div>
+            <div class="form-details">
+              <label for="confirmPassward">Confirm Passward</label>
+              <input
+                type="confirmPassward"
+                name="confirmPassward"
+                id="confirmPassward"
+                required
+              />
+            </div>
+            <button type="submit" class="register-button">Register</button>
+          </form>
+          <p class="login-link">
+            Already have an account? <a href="/">Login here</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="l-footer"><h2>Its a footer</h2></footer>
+  </body>
+</html>
