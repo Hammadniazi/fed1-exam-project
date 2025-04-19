@@ -10,8 +10,6 @@ async function fetchBlogPosts() {
   try {
     const response = await fetch(blogApi_url);
     const data = await response.json();
-
-    console.log(data);
     return data.data;
   } catch (error) {
     console.error(error_message_default, error?.message);
