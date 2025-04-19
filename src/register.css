@@ -71,7 +71,7 @@
   outline: none;
 }
 .form-details input::placeholder {
-  color: var(--secondary-color);
+  color: lightgray;
 }
 .register-button {
   border-radius: 4px;

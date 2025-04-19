@@ -6,7 +6,7 @@
     <title>Login Tech-Whiz</title>
     <link rel="stylesheet" href="../src/style.css" />
     <link rel="stylesheet" href="../src/register.css" />
-    <script type="module" src="./src/main.mjs" defer></script>
+    <script type="module" src="../src/login.mjs" defer></script>
   </head>
   <body>
     <header class="l-header">
@@ -31,16 +31,22 @@
       <section class="register-container">
         <div class="register-form-container">
           <h2>Login to Tech-Whiz</h2>
-          <form class="register-form">
+          <form class="register-form" id="login-form">
             <div class="form-details">
               <label for="email">Email</label>
-              <input type="email" name="email" id="email" required />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="@stud.noroff.no"
+                required
+              />
             </div>
             <div class="form-details">
-              <label for="passward">Passward</label>
-              <input type="passward" name="passward" id="passward" required />
+              <label for="password">Passward</label>
+              <input type="password" name="password" id="password" required />
             </div>
-            <button type="submit" class="register-button">Register</button>
+            <button type="submit" class="register-button">Login</button>
           </form>
           <p class="login-link">
             Don't have an account? <a href="./register.html">Register here</a>
