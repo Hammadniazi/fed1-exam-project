@@ -1,5 +1,13 @@
 import { error_message_default, loginApi_url } from "./constant.mjs";
 import { validateEmail, validPassword } from "./utils.mjs";
+function saveToken(token) {
+  localStorage.setItem("accessToken", token);
+}
+function getToken() {
+  return localStorage.getItem("accessToken");
+}
+// getToken();
+// console.log(getToken());
 
 const loginForm = document.getElementById("login-form");
 
@@ -12,7 +20,7 @@ loginForm.addEventListener("submit", async (event) => {
     return;
   }
   if (!validPassword(password)) {
-    alert("Password must be at leaset 6 characters long");
+    alert("Password must be at least 6 characters long");
     return;
   }
   try {
@@ -24,8 +32,10 @@ loginForm.addEventListener("submit", async (event) => {
       body: JSON.stringify({ email, password }),
     });
     const data = await response.json();
-    console.log(data);
+    console.log(data.data);
+
     if (response.ok) {
+      saveToken(data.data.accessToken);
       window.location.href = "/index.html";
     } else {
       alert("Login failed! Please try again");
