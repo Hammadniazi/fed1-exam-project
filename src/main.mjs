@@ -3,8 +3,13 @@ import { blogApi_url, error_message_default } from "./constant.mjs";
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const gridBlog = document.getElementById("gridBlog");
+const carousel = document.getElementById("carousel");
+const prevBtn = document.getElementById("previous-btn");
+const nextBtn = document.getElementById("next-btn");
 
 document.addEventListener("DOMContentLoaded", initializeBlog);
+let currentSlide = 0;
+let slides = [];
 
 async function fetchBlogPosts() {
   try {
@@ -14,6 +19,28 @@ async function fetchBlogPosts() {
   } catch (error) {
     console.error(error_message_default, error?.message);
   }
+}
+
+// carousel
+
+function createCarouselTemplate(posts) {
+  const carouselItems = posts
+    .slice(0, 3)
+    .map(
+      (post, index) => `
+  <div class="carousel-item ${index === 0 ? "active" : ""} ">
+    <img src="${post.media.url}" alt="${post.media.alt}">
+    <div>
+       <h2>${post.title} </h2>
+       <a href="/index.html?id=${post.id}" >Read More</a>
+    </div>
+  </div>
+  
+  `
+    )
+    .join("");
+  carousel.innerHTML = carouselItems;
+  slides = document.querySelectorAll(".carousel-item");
 }
 
 function createTemplate(posts) {
@@ -46,6 +73,7 @@ function createTemplate(posts) {
 async function initializeBlog() {
   const posts = await fetchBlogPosts();
   if (posts.length > 0) {
+    createCarouselTemplate(posts);
     createTemplate(posts);
   }
 }
