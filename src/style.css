@@ -96,6 +96,25 @@ body {
     display: block;
   }
 }
+/* carousel-section */
+.sec-carousel {
+  margin-top: 80px;
+  padding: 2rem 0;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.carousel-item {
+  min-width: 100%;
+  position: relative;
+}
 
 /* Section Blog */
 .c-blog {
