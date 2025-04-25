@@ -10,6 +10,7 @@ const nextBtn = document.getElementById("next-btn");
 document.addEventListener("DOMContentLoaded", initializeBlog);
 let currentSlide = 0;
 let slides = [];
+debugger;
 
 async function fetchBlogPosts() {
   try {
@@ -41,6 +42,8 @@ function createCarouselTemplate(posts) {
     .join("");
   carousel.innerHTML = carouselItems;
   slides = document.querySelectorAll(".carousel-item");
+  debugger;
+  console.log("Slides>>>", slides.length);
 }
 
 function createTemplate(posts) {
@@ -69,6 +72,14 @@ function createTemplate(posts) {
     .join("");
   gridBlog.innerHTML = blogItems;
 }
+function updateCarousel() {
+  slides.forEach((slide, index) => {
+    slide.classList.remove("active");
+    if (index === currentSlide) {
+      slide.classList.add("active");
+    }
+  });
+}
 
 async function initializeBlog() {
   const posts = await fetchBlogPosts();
@@ -80,4 +91,13 @@ async function initializeBlog() {
 
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+});
+
+prevBtn.addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+nextBtn.addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
 });
