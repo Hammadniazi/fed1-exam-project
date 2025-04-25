@@ -10,7 +10,6 @@ const nextBtn = document.getElementById("next-btn");
 document.addEventListener("DOMContentLoaded", initializeBlog);
 let currentSlide = 0;
 let slides = [];
-debugger;
 
 async function fetchBlogPosts() {
   try {
@@ -42,7 +41,6 @@ function createCarouselTemplate(posts) {
     .join("");
   carousel.innerHTML = carouselItems;
   slides = document.querySelectorAll(".carousel-item");
-  debugger;
   console.log("Slides>>>", slides.length);
 }
 

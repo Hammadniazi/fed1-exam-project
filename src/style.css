@@ -107,14 +107,22 @@ body {
   max-width: 1200px;
   overflow: hidden;
   margin: 0 auto;
+  border-radius: 8px;
 }
 .carousel {
   display: flex;
   transition: transform 0.5s ease;
 }
 .carousel-item {
+  display: none;
   min-width: 100%;
   position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.carousel-item.active {
+  display: block;
+  opacity: 1;
 }
 .carousel-item img {
   width: 100%;
@@ -129,6 +137,10 @@ body {
   padding: 2rem;
   color: var(--white-color);
   background-color: #000000b3;
+}
+.carousel-content h2 {
+  font-size: var(--font-xl);
+  margin-bottom: 1rem;
 }
 .carouselBtn {
   position: absolute;
@@ -150,7 +162,6 @@ body {
 .carouselBtn.next {
   right: 0;
 }
-
 /* Section Blog */
 .c-blog {
   background-color: var(--light-gray-color);
