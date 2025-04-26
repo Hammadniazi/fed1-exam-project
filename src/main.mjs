@@ -6,16 +6,39 @@ const gridBlog = document.getElementById("gridBlog");
 const carousel = document.getElementById("carousel");
 const prevBtn = document.getElementById("previous-btn");
 const nextBtn = document.getElementById("next-btn");
+const pageInfo = document.getElementById("pageInfo");
+const paginationContainer = document.getElementById("pagination");
 
 document.addEventListener("DOMContentLoaded", initializeBlog);
+function initializeBlog() {
+  fetchBlogPosts(currentPage);
+}
+
 let currentSlide = 0;
 let slides = [];
 
-async function fetchBlogPosts() {
+const postPerPage = 12;
+let currentPage = 1;
+let totalPages = 1;
+let totalPosts = 0;
+
+async function fetchBlogPosts(page) {
   try {
-    const response = await fetch(blogApi_url);
+    const response = await fetch(
+      `${blogApi_url}?limit=${postPerPage}&page=${page}`
+    );
     const data = await response.json();
-    return data.data;
+    totalPosts = data.meta.totalCount;
+    totalPages = Math.ceil(totalPosts / postPerPage);
+    currentPage = page;
+    console.log(totalPosts);
+    console.log(totalPages);
+    console.log(currentPage);
+    updatePagination();
+    if (currentPage === 1) {
+      createCarouselTemplate(data.data);
+    }
+    displayPosts(data.data);
   } catch (error) {
     console.error(error_message_default, error?.message);
   }
@@ -44,7 +67,7 @@ function createCarouselTemplate(posts) {
   console.log("Slides>>>", slides.length);
 }
 
-function createTemplate(posts) {
+function displayPosts(posts) {
   const blogItems = posts
     .map(
       (post) => `
@@ -79,12 +102,31 @@ function updateCarousel() {
   });
 }
 
-async function initializeBlog() {
-  const posts = await fetchBlogPosts();
-  if (posts.length > 0) {
-    createCarouselTemplate(posts);
-    createTemplate(posts);
-  }
+function updatePagination() {
+  paginationContainer.innerHTML = "";
+  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  const prevButton = document.createElement("button");
+  const nextButton = document.createElement("button");
+  prevButton.innerHTML = "&laquo";
+  nextButton.innerHTML = "&raquo";
+  prevButton.disabled = currentPage === 1;
+  nextButton.disabled = currentPage === totalPages;
+
+  prevButton.addEventListener("click", () => {
+    if (currentPage > 1) {
+      let previousPage = currentPage - 1;
+      fetchBlogPosts(previousPage);
+    }
+  });
+
+  nextButton.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      let nextPage = currentPage + 1;
+      fetchBlogPosts(nextPage);
+    }
+  });
+  paginationContainer.appendChild(prevButton);
+  paginationContainer.appendChild(nextButton);
 }
 
 hamburger.addEventListener("click", () => {
