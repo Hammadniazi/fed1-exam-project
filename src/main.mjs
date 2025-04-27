@@ -8,6 +8,7 @@ const prevBtn = document.getElementById("previous-btn");
 const nextBtn = document.getElementById("next-btn");
 const pageInfo = document.getElementById("pageInfo");
 const paginationContainer = document.getElementById("pagination");
+const loader = document.getElementById("loader");
 
 document.addEventListener("DOMContentLoaded", initializeBlog);
 function initializeBlog() {
@@ -23,6 +24,7 @@ let totalPages = 1;
 let totalPosts = 0;
 
 async function fetchBlogPosts(page) {
+  showLoader();
   try {
     const response = await fetch(
       `${blogApi_url}?limit=${postPerPage}&page=${page}`
@@ -41,6 +43,8 @@ async function fetchBlogPosts(page) {
     displayPosts(data.data);
   } catch (error) {
     console.error(error_message_default, error?.message);
+  } finally {
+    hideLoader();
   }
 }
 
@@ -141,3 +145,9 @@ nextBtn.addEventListener("click", () => {
   currentSlide = (currentSlide + 1) % slides.length;
   updateCarousel();
 });
+function showLoader() {
+  loader.style.display = "block";
+}
+function hideLoader() {
+  loader.style.display = "none";
+}
