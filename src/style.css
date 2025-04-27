@@ -239,3 +239,21 @@ button:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
+.loader {
+  display: none;
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border: 4px solid var(--secondary-color);
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: loader 0.5s linear infinite;
+}
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
