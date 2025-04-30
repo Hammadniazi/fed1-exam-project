@@ -1,6 +1,6 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
 const blogForm = document.getElementById("blogForm");
-const cancalButton = document.getElementById("cancel-button");
+const cancelButton = document.getElementById("cancel-button");
 if (blogForm) {
   blogForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -8,6 +8,7 @@ if (blogForm) {
     const title = document.getElementById("title").value;
     const image = document.getElementById("image").value;
     const content = document.getElementById("content").value;
+
     const postData = {
       title,
       media: {
@@ -32,7 +33,7 @@ if (blogForm) {
       });
       console.log({ title, image, content });
       const data = await response.json();
-      console.warn("Response>>>", data);
+      console.log("Response>>>", data);
 
       if (response.ok) {
         window.location.href = "../index.html";
