@@ -56,7 +56,9 @@ function createCarouselTemplate(posts) {
     .map(
       (post, index) => `
   <div class="carousel-item ${index === 0 ? "active" : ""} ">
-    <img src="${post.media.url}" alt="${post.media.alt}">
+    <img src="${
+      post.media?.url || "https://picsum.photos/450/250?grayscale"
+    }" alt="${post.media?.alt || "NO Image"}">
     <div class="carousel-content">
        <h2>${post.title} </h2>
        <a href="/index.html?id=${post.id}" >Read More</a>
