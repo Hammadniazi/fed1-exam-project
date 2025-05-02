@@ -118,12 +118,15 @@
   margin-bottom: 2rem;
 }
 .post-title {
+  display: flex;
+  justify-content: center;
   font-size: var(--font-xl);
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
 .post-details {
   display: flex;
+  justify-content: space-between;
   gap: var(--gap-md);
   margin-bottom: 1rem;
   color: #666;
@@ -133,9 +136,26 @@
   height: 400px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .post-content {
   min-height: 1.8;
   color: var(--text-color);
+}
+.share-link {
+  display: flex;
+  justify-content: flex-end;
+}
+.share-button {
+  display: flex;
+  gap: var(--gap-xs);
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.share-button:hover {
+  background-color: var(--primary-color);
 }
