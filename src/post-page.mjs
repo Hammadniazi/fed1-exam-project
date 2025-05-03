@@ -4,6 +4,7 @@ const postAuthor = document.querySelector(".post-author");
 const postDate = document.querySelector(".post-date");
 const postImage = document.querySelector(".post-image");
 const postContent = document.querySelector(".post-content");
+const shareLink = document.querySelector(".share-button");
 
 document.addEventListener("DOMContentLoaded", postPage);
 async function postPage() {
@@ -30,6 +31,12 @@ async function postPage() {
     } else {
       window.location.href = "../index.html";
     }
+    const shareUrl = `${window.location.origin}${window.location.pathname}?id=${postId}`;
+    shareLink.addEventListener("click", () => {
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        alert("Post Url copied to clipboard!");
+      });
+    });
   } catch (error) {
     console.log(error_message_default, error?.message);
   }
