@@ -56,12 +56,16 @@ function createCarouselTemplate(posts) {
     .map(
       (post, index) => `
   <div class="carousel-item ${index === 0 ? "active" : ""} ">
+    <a href="post/index.html?id=${post.id}">
     <img src="${
       post.media?.url || "https://picsum.photos/450/250?grayscale"
     }" alt="${post.media?.alt || "NO Image"}">
+    </a>
     <div class="carousel-content">
        <h2>${post.title} </h2>
-       <a href="/index.html?id=${post.id}" >Read More</a>
+       <a href="post/index.html?id=${
+         post.id
+       } id="link-postPage" " >Read More</a>
     </div>
   </div>
   
@@ -81,14 +85,15 @@ function displayPosts(posts) {
         ${
           post.media?.url
             ? `
-        <img src="${post.media.url}" alt="${
+        <a href="post/index.html?id=${post.id}">
+        <img  src="${post.media.url}" alt="${
                 post.media.alt || "Post Image"
               }" width = "450" />`
             : `<p>No Image Available</p>`
-        }
+        } </a>
         <div class= "blog-card-content">
             <h3>${post.title}</h3>
-            <p>${post.body}</p>
+            <p>${post.body ? trimText(post.body, 100) : ""}</p>
             <a href="post/index.html?id=${
               post.id
             }" class="read-more">Read More</a>
@@ -99,6 +104,7 @@ function displayPosts(posts) {
     .join("");
   gridBlog.innerHTML = blogItems;
 }
+
 function updateCarousel() {
   slides.forEach((slide, index) => {
     slide.classList.remove("active");
@@ -153,3 +159,10 @@ function showLoader() {
 function hideLoader() {
   loader.style.display = "none";
 }
+const trimText = (text, maxLength) => {
+  if (text.length >= maxLength) {
+    return text.slice(0, text.slice(0, maxLength).lastIndexOf(" ")) + "...";
+  } else {
+    return text;
+  }
+};
