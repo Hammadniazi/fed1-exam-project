@@ -35,7 +35,7 @@ async function postPage() {
 
     shareLink.addEventListener("click", async () => {
       try {
-        navigator.clipboard.writeText(shareUrl);
+        await navigator.clipboard.writeText(shareUrl);
         alert("Post Url copied to clipboard!");
       } catch (error) {
         console.log(error_message_default, error?.message);
