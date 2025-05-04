@@ -32,12 +32,16 @@ async function postPage() {
       window.location.href = "../index.html";
     }
     const shareUrl = `${window.location.origin}${window.location.pathname}?id=${postId}`;
-    shareLink.addEventListener("click", () => {
-      navigator.clipboard.writeText(shareUrl).then(() => {
+
+    shareLink.addEventListener("click", async () => {
+      try {
+        navigator.clipboard.writeText(shareUrl);
         alert("Post Url copied to clipboard!");
-      });
+      } catch (error) {
+        console.log(error_message_default, error?.message);
+      }
     });
   } catch (error) {
-    console.log(error_message_default, error?.message);
+    console.error(error_message_default, error?.message);
   }
 }
