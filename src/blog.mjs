@@ -1,6 +1,7 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
 const blogForm = document.getElementById("blogForm");
-const cancelButton = document.getElementById("cancel-button");
+const editPostForm = document.getElementById("editPostForm");
+const cancelButton = document.querySelector(".cancel-button");
 if (blogForm) {
   blogForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -44,8 +45,28 @@ if (blogForm) {
       console.error(error_message_default, error?.message);
     }
   });
+}
+if (editPostForm) {
+  editPostForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const title = document.getElementById("title").value;
+    const image = document.getElementById("image").value;
+    const content = document.getElementById("content").value;
+    const postId = new URLSearchParams(window.location.search).get("id");
+    debugger;
+    try {
+      const token = localStorage.getItem("accessToken");
+      if (!token) {
+        window.location.href = "../account/login.html";
+        return;
+      }
 
-  cancelButton.addEventListener("click", () => {
-    window.location.href = "../index.html";
+      const responcse = await fetch(`${blogApi_url}/${postId}`);
+    } catch (error) {
+      console.error(error_message_default, error?.message);
+    }
   });
 }
+cancelButton.addEventListener("click", () => {
+  window.location.href = "../index.html";
+});
