@@ -145,6 +145,7 @@ body {
   background-color: #000000b3;
 }
 .carousel-content h2 {
+  text-align: center;
   font-size: var(--font-xl);
   margin-bottom: 1rem;
 }

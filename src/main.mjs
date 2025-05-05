@@ -56,16 +56,13 @@ function createCarouselTemplate(posts) {
     .map(
       (post, index) => `
   <div class="carousel-item ${index === 0 ? "active" : ""} ">
-    <a href="post/index.html?id=${post.id}">
+    <a href="post/post-page.html?id=${post.id}">
     <img src="${
       post.media?.url || "https://picsum.photos/450/250?grayscale"
     }" alt="${post.media?.alt || "NO Image"}">
     </a>
     <div class="carousel-content">
        <h2>${post.title} </h2>
-       <a href="post/index.html?id=${
-         post.id
-       } id="link-postPage" " >Read More</a>
     </div>
   </div>
   
@@ -85,7 +82,7 @@ function displayPosts(posts) {
         ${
           post.media?.url
             ? `
-        <a href="post/index.html?id=${post.id}">
+        <a href="post/post-page.html?id=${post.id}">
         <img  src="${post.media.url}" alt="${
                 post.media.alt || "Post Image"
               }" width = "450" />`
@@ -94,7 +91,7 @@ function displayPosts(posts) {
         <div class= "blog-card-content">
             <h3>${post.title}</h3>
             <p>${post.body ? trimText(post.body, 100) : ""}</p>
-            <a href="post/index.html?id=${
+            <a href="post/post-page.html?id=${
               post.id
             }" class="read-more">Read More</a>
         </div>
