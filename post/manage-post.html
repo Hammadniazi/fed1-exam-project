@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech-Whiz</title>
+    <link rel="stylesheet" href="../src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/3cc0008f2c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="../src/manage.mjs" defer></script>
+  </head>
+  <body>
+    <header class="l-header">
+      <nav class="container-navbar">
+        <div class="nav-logo">
+          <h1>Tech-Whiz</h1>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="/" style="display: none">Create Blog</a>
+          <a href="./account/login.html">Login</a>
+          <a href="./account/register.html">Register</a>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+    <main class="l-main">
+      <section class="sec-carousel">
+        <div class="carousel-container">
+          <button class="carouselBtn previous" id="previous-btn">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="carousel" id="carousel"></div>
+          <button class="carouselBtn next" id="next-btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+      <section class="c-blog">
+        <!-- <h2>Manage Posts</h2> -->
+        <button class="createPost-btn">
+          <i class="fa-solid fa-plus"></i> Create New Post
+        </button>
+        <div class="grid-container" id="gridBlog"></div>
+      </section>
+      <section class="c-pagination">
+        <div class="page-Info" id="pageInfo">Showing page 1 of 1</div>
+        <div class="pagination" id="pagination"></div>
+      </section>
+      <div class="loader" id="loader"></div>
+    </main>
+    <footer class="l-footer"><h2>Its a footer</h2></footer>
+  </body>
+</html>

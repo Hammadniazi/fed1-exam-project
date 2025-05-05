@@ -6,7 +6,7 @@
     <title>Login Tech-Whiz</title>
     <link rel="stylesheet" href="../src/style.css" />
     <link rel="stylesheet" href="../src/blog.css" />
-    <script type="module" src="../src/blog.mjs" defer></script>
+    <script type="module" src="../src/edit.mjs" defer></script>
   </head>
   <body>
     <header class="l-header">
@@ -50,7 +50,9 @@
               ></textarea>
             </div>
             <div class="blog-form-buttons">
-              <button type="submit" class="submit-button">Update Post</button>
+              <button type="submit" class="submit-button" id="editPostForm">
+                Update Post
+              </button>
               <button type="button" class="cancel-button">Cancel</button>
               <button type="button" class="delete-button" id="delete-button">
                 <i class="fas fa-trash"></i>
