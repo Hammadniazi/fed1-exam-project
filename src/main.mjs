@@ -82,15 +82,17 @@ function displayPosts(posts) {
         ${
           post.media?.url
             ? `
-        <a href="post/post-page.html?id=${post.id}">
-        <img  src="${post.media.url}" alt="${
+        <div>
+          <a href="post/post-page.html?id=${post.id}">
+          <img  src="${post.media.url}" alt="${
                 post.media.alt || "Post Image"
               }" width = "450" />`
             : `<p>No Image Available</p>`
         } </a>
+        </div>
         <div class= "blog-card-content">
             <h3>${post.title}</h3>
-            <p>${post.body ? trimText(post.body, 100) : ""}</p>
+            <p>${post.body ? trimText(post.body, 100) : "No Content"}</p>
             <a href="post/post-page.html?id=${
               post.id
             }" class="read-more">Read More</a>
