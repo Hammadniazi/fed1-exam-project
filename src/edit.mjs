@@ -1,12 +1,39 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
 const editPostForm = document.getElementById("editPostForm");
+const cancelBtn = document.querySelector(".cancel-button");
+const titleInput = document.getElementById("title");
+const imageInput = document.getElementById("image");
+const contentInput = document.getElementById("content");
+const postId = new URLSearchParams(window.location.search).get("id");
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!postId) {
+    alert("No Id found in the URl");
+    return;
+  } else {
+    getData(postId);
+  }
+});
+async function getData(id) {
+  try {
+    const response = await fetch(`${blogApi_url}/${postId}`);
+    const data = await response.json();
+    console.log(data);
+
+    titleInput.value = data.data.title;
+    imageInput.value = data.data.media.url;
+    contentInput.value = data.data.body;
+  } catch (error) {
+    console.log(error_message_default, error?.message);
+  }
+}
 
 editPostForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const title = document.getElementById("title").value;
-  const image = document.getElementById("image").value;
-  const content = document.getElementById("content").value;
-  const postId = new URLSearchParams(window.location.search).get("id");
+
+  const title = titleInput.value;
+  const image = imageInput.value;
+  const content = contentInput.value;
 
   const editData = {
     title,
@@ -32,11 +59,17 @@ editPostForm.addEventListener("submit", async (event) => {
       body: JSON.stringify(editData),
     });
     const data = await response.json();
+    console.log(data);
+
     if (response.ok) {
       alert("Post updated successfully");
-      window.location.href = "../index.html";
+      window.location.href = "../post/manage-post.html";
     }
   } catch (error) {
     console.error(error_message_default, error?.message);
   }
+});
+
+cancelBtn.addEventListener("click", () => {
+  window.location.href = "../post/manage-post.html";
 });

@@ -36,7 +36,7 @@ loginForm.addEventListener("submit", async (event) => {
 
     if (response.ok) {
       saveToken(data.data.accessToken);
-      window.location.href = "/index.html";
+      window.location.href = "../post/manage-post.html";
     } else {
       alert("Login failed! Please try again");
     }
