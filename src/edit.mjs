@@ -1,5 +1,6 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
 const editPostForm = document.getElementById("editPostForm");
+const deletePostButton = document.getElementById("delete-button");
 const cancelBtn = document.querySelector(".cancel-button");
 const titleInput = document.getElementById("title");
 const imageInput = document.getElementById("image");
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     getData(postId);
   }
 });
-async function getData(id) {
+async function getData() {
   try {
     const response = await fetch(`${blogApi_url}/${postId}`);
     const data = await response.json();
@@ -67,6 +68,32 @@ editPostForm.addEventListener("submit", async (event) => {
     }
   } catch (error) {
     console.error(error_message_default, error?.message);
+  }
+});
+
+deletePostButton.addEventListener("click", async () => {
+  const confirmDelete = confirm("Are you sure you want to delete this post ?");
+  if (!confirmDelete) return;
+  try {
+    const token = localStorage.getItem("accessToken");
+    if (!token) {
+      window.location.href = "../account/login.html";
+      return;
+    }
+    const response = await fetch(`${blogApi_url}/${postId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (response.ok) {
+      alert("Post deleted successfully");
+      window.location.href = "../post/manage-post.html";
+    } else {
+      alert("Failed to delete the post");
+    }
+  } catch (error) {
+    console.log(error_message_default, error?.message);
   }
 });
 
