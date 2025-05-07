@@ -66,6 +66,23 @@ body {
 .nav-links a:hover {
   color: var(--secondary-color);
 }
+.greeting {
+  display: block;
+  gap: var(--gap-s);
+}
+.greeting span {
+  color: var(--white-color);
+  font-size: var(--font-s);
+}
+.greeting a {
+  background-color: var(--secondary-color);
+  font-size: var(--gap-s);
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.greeting a:hover {
+  background-color: #323d49;
+}
 .hamburger {
   display: none;
   cursor: pointer;
@@ -177,7 +194,17 @@ body {
 .c-blog h2 {
   text-align: center;
   color: var(--primary-color);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+.createPost-btn {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-xs);
+  margin: 0 auto 4rem;
+  transition: background-color 0.3s;
+}
+.c-blog button:hover {
+  background-color: var(--primary-color);
 }
 .grid-container {
   display: grid;
@@ -264,4 +291,9 @@ button:disabled {
   to {
     transform: rotate(360deg);
   }
+}
+.manage-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-l);
 }

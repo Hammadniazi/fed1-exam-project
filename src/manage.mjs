@@ -9,6 +9,7 @@ const nextBtn = document.getElementById("next-btn");
 const pageInfo = document.getElementById("pageInfo");
 const paginationContainer = document.getElementById("pagination");
 const loader = document.getElementById("loader");
+const newPostBtn = document.querySelector(".createPost-btn");
 
 document.addEventListener("DOMContentLoaded", initializeBlog);
 function initializeBlog() {
@@ -91,7 +92,7 @@ function displayPosts(posts) {
         <div class= "blog-card-content">
             <h3>${post.title}</h3>
             <p>${post.body ? trimText(post.body, 100) : ""}</p>
-           <div>
+           <div class= "manage-buttons">
                <button class="edit-button"> <i class="fas fa-edit"></i> Edit Post</button>
                <button class="delete-button"> <i class="fas fa-trash"></i> Delete Post</Delete Post>
            </div>
@@ -181,3 +182,7 @@ const trimText = (text, maxLength) => {
     return text;
   }
 };
+
+newPostBtn.addEventListener("click", () => {
+  window.location.href = "../post/create-blog.html";
+});
