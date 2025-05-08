@@ -6,9 +6,6 @@ function saveToken(token) {
 function getToken() {
   return localStorage.getItem("accessToken");
 }
-// getToken();
-// console.log(getToken());
-
 const loginForm = document.getElementById("login-form");
 
 loginForm.addEventListener("submit", async (event) => {
