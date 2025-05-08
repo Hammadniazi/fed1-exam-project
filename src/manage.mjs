@@ -10,6 +10,7 @@ const pageInfo = document.getElementById("pageInfo");
 const paginationContainer = document.getElementById("pagination");
 const loader = document.getElementById("loader");
 const newPostBtn = document.querySelector(".createPost-btn");
+const logoutLink = document.getElementById("logoutLink");
 
 document.addEventListener("DOMContentLoaded", initializeBlog);
 function initializeBlog() {
@@ -185,4 +186,9 @@ const trimText = (text, maxLength) => {
 
 newPostBtn.addEventListener("click", () => {
   window.location.href = "../post/create-blog.html";
+});
+
+logoutLink.addEventListener("click", () => {
+  localStorage.removeItem("accessToken");
+  window.location.href = "../index.html";
 });
