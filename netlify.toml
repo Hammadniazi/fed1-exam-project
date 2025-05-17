@@ -1,4 +1,17 @@
+# Allow API calls to be handled normally
 [[redirects]]
-from = '/*'
-to = '/index.html'
+from = "/api/*"
+to = "/api/:splat"
+status = 200
+
+# Allow assets to load normally
+[[redirects]]
+from = "/assets/*"
+to = "/assets/:splat"
+status = 200
+
+# SPA fallback - send everything else to index.html
+[[redirects]]
+from = "/*"
+to = "/index.html"
 status = 200
