@@ -93,25 +93,7 @@ body {
   background-color: var(--white-color);
   margin: 5px 0;
 }
-@media (width <= 768px) {
-  .nav-links {
-    display: none;
-    background-color: var(--primary-color);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: 2rem;
-    flex-direction: column;
-    gap: var(--gap-md);
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .hamburger {
-    display: block;
-  }
-}
+
 /* carousel-section */
 .sec-carousel {
   margin-top: 80px;
@@ -185,6 +167,52 @@ body {
 .carouselBtn.next {
   right: 0;
 }
+@media (width <= 768px) {
+  .nav-links {
+    display: none;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    flex-direction: column;
+    gap: var(--gap-md);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .carousel-content h2 {
+    font-size: var(--font-md);
+  }
+  .carouselBtn {
+    padding: 0.5rem;
+    font-size: var(--font-md);
+  }
+}
+@media (width <= 480px) {
+  .carousel-content {
+    padding: 0.5rem;
+  }
+  .carousel-content h2 {
+    font-size: var(--font-s);
+  }
+  .footer-content {
+    text-align: center;
+    justify-content: center;
+  }
+  .footer-content ul {
+    padding: 0;
+  }
+  .social-links {
+    justify-content: center;
+  }
+}
+
 /* Section Blog */
 .c-blog {
   background-color: var(--light-gray-color);

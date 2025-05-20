@@ -159,3 +159,30 @@
 .share-button:hover {
   background-color: var(--primary-color);
 }
+@media (width <= 768px) {
+  .post-title {
+    font-size: var(--font-lg);
+    padding: 0 1rem;
+    text-align: center;
+  }
+  .post-image {
+    max-height: 300px;
+  }
+  .post-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--font-xs);
+  }
+  .post-content {
+    text-align: justify;
+  }
+}
+@media (width <= 480px) {
+  .post-title {
+    font-size: var(--font-md);
+  }
+  .post-image {
+    max-height: 250px;
+  }
+}
