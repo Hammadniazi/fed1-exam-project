@@ -28,7 +28,7 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  /* margin-top: 80px; */
+  margin-top: 80px;
   background-color: var(--light-gray-color);
 }
 .register-form-container {
