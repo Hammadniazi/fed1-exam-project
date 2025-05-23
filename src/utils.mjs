@@ -5,3 +5,11 @@ export function validateEmail(email) {
 export function validPassword(password) {
   return password.length >= 6;
 }
+
+export function hamburger() {
+  const navLinks = document.querySelector(".nav-links");
+  const hamburger = document.querySelector(".hamburger");
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
