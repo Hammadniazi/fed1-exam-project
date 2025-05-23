@@ -35,9 +35,6 @@ async function fetchBlogPosts(page) {
     totalPosts = data.meta.totalCount;
     totalPages = Math.ceil(totalPosts / postPerPage);
     currentPage = page;
-    console.log(totalPosts);
-    console.log(totalPages);
-    console.log(currentPage);
     updatePagination();
     if (currentPage === 1) {
       createCarouselTemplate(data.data);
@@ -73,7 +70,6 @@ function createCarouselTemplate(posts) {
     .join("");
   carousel.innerHTML = carouselItems;
   slides = document.querySelectorAll(".carousel-item");
-  console.log("Slides>>>", slides.length);
 }
 
 function displayPosts(posts) {
