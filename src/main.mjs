@@ -1,7 +1,5 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
-
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+import { hamburger } from "./utils.mjs";
 const gridBlog = document.getElementById("gridBlog");
 const carousel = document.getElementById("carousel");
 const prevBtn = document.getElementById("previous-btn");
@@ -13,6 +11,7 @@ const loader = document.getElementById("loader");
 document.addEventListener("DOMContentLoaded", initializeBlog);
 function initializeBlog() {
   fetchBlogPosts(currentPage);
+  hamburger();
 }
 
 let currentSlide = 0;
@@ -139,10 +138,6 @@ function updatePagination() {
   paginationContainer.appendChild(prevButton);
   paginationContainer.appendChild(nextButton);
 }
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
 
 prevBtn.addEventListener("click", () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
