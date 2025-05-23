@@ -19,13 +19,11 @@ async function getData() {
   try {
     const response = await fetch(`${blogApi_url}/${postId}`);
     const data = await response.json();
-    console.log(data);
-
     titleInput.value = data.data.title;
     imageInput.value = data.data.media.url;
     contentInput.value = data.data.body;
   } catch (error) {
-    console.log(error_message_default, error?.message);
+    console.error(error_message_default, error?.message);
   }
 }
 
@@ -60,8 +58,6 @@ editPostForm.addEventListener("submit", async (event) => {
       body: JSON.stringify(editData),
     });
     const data = await response.json();
-    console.log(data);
-
     if (response.ok) {
       alert("Post updated successfully");
       window.location.href = "../post/manage-post.html";
@@ -93,7 +89,7 @@ deletePostButton.addEventListener("click", async () => {
       alert("Failed to delete the post");
     }
   } catch (error) {
-    console.log(error_message_default, error?.message);
+    console.error(error_message_default, error?.message);
   }
 });
 

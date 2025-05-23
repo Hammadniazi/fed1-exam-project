@@ -20,7 +20,6 @@ async function postPage() {
     const response = await fetch(`${blogApi_url}/${postId}`);
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       postTitle.textContent = data.data.title;
       postAuthor.textContent = `Author: ${data.data.author.name}`;
       postDate.textContent = `Publish on: ${new Date(
