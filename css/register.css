@@ -79,7 +79,6 @@
 }
 @media (width <= 768px) {
   .register-container {
-    margin-top: 0;
     padding: 1rem;
   }
 }
