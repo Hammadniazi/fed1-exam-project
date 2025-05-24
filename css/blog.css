@@ -153,6 +153,12 @@
   .post-content {
     text-align: justify;
   }
+  .blog-form-buttons {
+    gap: var(--gap-xs);
+  }
+  .button {
+    margin: 0;
+  }
 }
 @media (width <= 480px) {
   .post-title {
@@ -160,5 +166,15 @@
   }
   .post-image {
     max-height: 250px;
+  }
+  .submit-button,
+  .cancel-button,
+  .delete-button {
+    padding: 0.3rem;
+  }
+  button {
+    padding: 0;
+    margin: 3px;
+    font-size: var(--font-xs);
   }
 }
