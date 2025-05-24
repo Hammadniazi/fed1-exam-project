@@ -16,17 +16,19 @@
     <script type="module" src="./src/main.mjs" defer></script>
   </head>
   <body>
-    <header class="l-header">
-      <nav class="container-navbar">
+    <header class="l-header" role="banner">
+      <nav class="container-navbar" aria-label="Main navigation">
         <div class="nav-logo">
-          <h1>Tech-Whiz</h1>
+          <h1>
+            <a href="/index.html" aria-label="Tech-Whiz Homepage"></a>Tech-Whiz
+          </h1>
         </div>
         <div class="nav-links">
           <a href="/index.html">Home</a>
           <a href="./account/login.html">Login</a>
           <a href="./account/register.html">Register</a>
         </div>
-        <div class="hamburger">
+        <div class="hamburger" aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>
@@ -34,25 +36,33 @@
       </nav>
     </header>
     <main class="l-main">
-      <section class="sec-carousel">
+      <div class="sec-carousel" aria-label="Feature Posts carousel">
         <div class="carousel-container">
-          <button class="carouselBtn previous" id="previous-btn">
+          <button
+            class="carouselBtn previous"
+            id="previous-btn"
+            aria-label="Previous slide"
+          >
             <i class="fas fa-chevron-left"></i>
           </button>
           <div class="carousel" id="carousel"></div>
-          <button class="carouselBtn next" id="next-btn">
+          <button
+            class="carouselBtn next"
+            id="next-btn"
+            aria-label="Next slide"
+          >
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
-      </section>
+      </div>
       <section class="c-blog">
         <h2>Latest Posts</h2>
         <div class="grid-container" id="gridBlog"></div>
       </section>
-      <section class="c-pagination">
+      <div class="c-pagination" aria-label="Pagination">
         <div class="page-Info" id="pageInfo">Showing page 1 of 1</div>
         <div class="pagination" id="pagination"></div>
-      </section>
+      </div>
       <div class="loader" id="loader"></div>
     </main>
     <footer class="l-footer">
@@ -72,13 +82,19 @@
         <div class="footer-section">
           <h3>Contact with Us</h3>
           <div class="social-links">
-            <a href="https://x.com/" target="_blank"
+            <a href="https://x.com/" target="_blank" aria-label="Twitter"
               ><i class="fa-brands fa-twitter"></i
             ></a>
-            <a href="https://www.facebook.com/" target="_blank"
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              aria-label="Facebook"
               ><i class="fa-brands fa-facebook"></i
             ></a>
-            <a href="https://www.instagram.com/" target="_blank"
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              aria-label="instagram"
               ><i class="fa-brands fa-instagram"></i
             ></a>
           </div>
