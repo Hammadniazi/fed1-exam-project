@@ -24,7 +24,7 @@ Your deployment is done via static hosting provider (Netlify is recommended).
 
 ## Report
 
-[_ADD_YOUR_REPORT_HERE_](https://docs.google.com/document/d/1iDdukZSKKO37YLuvyJRIuj53J_OI7XEW4icW4Zx_Y1k/edit?tab=t.0)
+[_ADD_YOUR_REPORT_HERE_](https://docs.google.com/document/d/1i_mIKx9EdgvX_lpqMPLRGIjYaoTlWJH1MMEJTr_U4tU/edit?tab=t.0)
 
 ## Getting Started
 
