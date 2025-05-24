@@ -350,6 +350,12 @@ button:disabled {
     padding: 0.5rem;
     font-size: var(--font-md);
   }
+  .c-blog {
+    padding: 2rem 1rem;
+  }
+  .sec-carousel {
+    padding: 1rem 0;
+  }
 }
 @media (width <= 480px) {
   .carousel-content {
@@ -369,6 +375,9 @@ button:disabled {
     justify-content: center;
   }
   .sec-carousel {
-    padding: 1rem 0;
+    padding: 0;
+  }
+  .c-blog {
+    padding: 1rem 0.5rem;
   }
 }
