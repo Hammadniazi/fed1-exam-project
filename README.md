@@ -11,6 +11,8 @@ This is a vanilla website that displays a list of items fetched from an API.
 - [Github Link](https://github.com/Hammadniazi/fed1-exam-project)
 - [Kanban Board Link](https://github.com/users/Hammadniazi/projects/8)
 - [Design](https://www.figma.com/design/kJ8qyJOxdPEYngtbND1EW3/Blog-task?node-id=0-1&t=SfiFcscOS7wgYZrr-1)
+- [Figma Prototype for Desktop](https://www.figma.com/proto/kJ8qyJOxdPEYngtbND1EW3/Blog-task?node-id=39-344&t=NbptTd2XJH0TPKeI-1)
+- [Figma Prototype for MObile](https://www.figma.com/proto/kJ8qyJOxdPEYngtbND1EW3/Blog-task?node-id=115-1536&t=NbptTd2XJH0TPKeI-1)
 - [API Docs](https://docs.noroff.dev/docs/v2/blog/posts)
 - [API Endpoint](https://api.noroff.dev/v2/blog/posts)
 
