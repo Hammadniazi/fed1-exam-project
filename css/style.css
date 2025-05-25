@@ -345,7 +345,6 @@ button:disabled {
 
   .carousel-content h2 {
     font-size: var(--font-md);
-    margin-bottom: 0;
   }
   .carouselBtn {
     padding: 0.5rem;
@@ -370,6 +369,7 @@ button:disabled {
   }
   .carousel-content h2 {
     font-size: var(--font-s);
+    margin-bottom: 0.5rem;
   }
   .footer-content {
     text-align: center;
