@@ -345,6 +345,7 @@ button:disabled {
 
   .carousel-content h2 {
     font-size: var(--font-md);
+    margin-bottom: 0;
   }
   .carouselBtn {
     padding: 0.5rem;
@@ -355,6 +356,12 @@ button:disabled {
   }
   .sec-carousel {
     padding: 1rem 0;
+  }
+  .carousel-content {
+    padding: 1rem;
+  }
+  .nav-logo h1 {
+    font-size: var(--font-lg);
   }
 }
 @media (width <= 480px) {
@@ -379,5 +386,8 @@ button:disabled {
   }
   .c-blog {
     padding: 1rem 0.5rem;
+  }
+  .nav-logo h1 {
+    font-size: var(--font-md);
   }
 }

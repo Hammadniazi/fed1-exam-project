@@ -173,9 +173,8 @@
     padding: 0.5rem;
     font-size: var(--font-s);
   }
-  button {
-    padding: 0;
-    margin: 3px;
+  .blog-form-buttons button {
+    padding: 5px;
     font-size: var(--font-s);
   }
   .blog-container {
