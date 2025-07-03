@@ -55,7 +55,7 @@ function createCarouselTemplate(posts) {
     <a href="post/post-page.html?id=${post.id}">
     <img src="${
       post.media?.url || "https://picsum.photos/450/250?grayscale"
-    }" alt="${post.media?.alt || "NO Image"}">
+    }" alt="${post.media?.alt || "Image for ${post.title} "}">
     </a>
     <div class="carousel-content">
        <h2>${post.title} </h2>
@@ -80,7 +80,7 @@ function displayPosts(posts) {
         <div>
           <a href="./post/post-page.html?id=${post.id}">
           <img  src="${post.media.url}" alt="${
-                post.media.alt || "Post Image"
+                post.media.alt || "Thumbnails for ${post.title} "
               }" width = "450" />`
             : `<p>No Image Available</p>`
         } </a>

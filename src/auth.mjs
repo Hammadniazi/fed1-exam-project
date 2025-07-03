@@ -17,7 +17,7 @@ registerForm.addEventListener("submit", async (event) => {
     return;
   }
   if (password !== confirmPassword) {
-    alert("Passward do not match");
+    alert("Password do not match");
     return;
   }
   try {
