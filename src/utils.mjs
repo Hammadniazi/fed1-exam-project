@@ -13,3 +13,11 @@ export function hamburger() {
     navLinks.classList.toggle("active");
   });
 }
+export function hamburger_manu(){
+const hamburger_manu = document.querySelector(".hamburger")
+hamburger_manu.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter" || e.key === " "){
+    e.preventDefault();
+    hamburger_manu.click()
+  }
+})}
