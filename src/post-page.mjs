@@ -1,5 +1,5 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
-import { hamburger, hamburger_manu } from "./utils.mjs";
+import { hamburger } from "./utils.mjs";
 const postTitle = document.querySelector(".post-title");
 const postAuthor = document.querySelector(".post-author");
 const postDate = document.querySelector(".post-date");
@@ -46,5 +46,4 @@ async function postPage() {
   }
   // Add hamburger toggle function importing from utils file
   hamburger();
-  hamburger_manu();
 }

@@ -1,5 +1,5 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
-import {  hamburger_manu } from "./utils.mjs";
+
 
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
@@ -16,7 +16,6 @@ const logoutLink = document.getElementById("logoutLink");
 document.addEventListener("DOMContentLoaded", initializeBlog);
 function initializeBlog() {
   fetchBlogPosts(currentPage);
-  hamburger_manu();
 }
 
 let currentSlide = 0;

@@ -1,5 +1,5 @@
 import { error_message_default, loginApi_url } from "./constant.mjs";
-import { validateEmail, validPassword, hamburger,hamburger_manu } from "./utils.mjs";
+import { validateEmail, validPassword, hamburger } from "./utils.mjs";
 function saveToken(token) {
   localStorage.setItem("accessToken", token);
 }
@@ -41,4 +41,3 @@ loginForm.addEventListener("submit", async (event) => {
   }
 });
 hamburger();
-hamburger_manu();

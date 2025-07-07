@@ -1,5 +1,5 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
-import { hamburger_manu, hamburger } from "./utils.mjs";
+import { hamburger } from "./utils.mjs";
 const blogForm = document.getElementById("blogForm");
 const cancelButton = document.querySelector(".cancel-button");
 if (blogForm) {
@@ -50,5 +50,4 @@ if (blogForm) {
 cancelButton.addEventListener("click", () => {
   window.location.href = "../post/manage-post.html";
 });
-hamburger(),
-hamburger_manu();
+hamburger();

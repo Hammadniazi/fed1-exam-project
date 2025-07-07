@@ -1,5 +1,5 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
-import { hamburger, hamburger_manu } from "./utils.mjs";
+import { hamburger } from "./utils.mjs";
 const gridBlog = document.getElementById("gridBlog");
 const carousel = document.getElementById("carousel");
 const prevBtn = document.getElementById("previous-btn");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", initializeBlog);
 function initializeBlog() {
   fetchBlogPosts(currentPage);
   hamburger();
-  hamburger_manu();
+  
 }
 
 let currentSlide = 0;

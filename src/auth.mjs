@@ -1,5 +1,5 @@
 import { registerApi_url, error_message_default } from "./constant.mjs";
-import { hamburger, hamburger_manu,  validateEmail, validPassword } from "./utils.mjs";
+import { hamburger,  validateEmail, validPassword } from "./utils.mjs";
 
 const registerForm = document.getElementById("register-form");
 registerForm.addEventListener("submit", async (event) => {
@@ -44,4 +44,3 @@ registerForm.addEventListener("submit", async (event) => {
   }
 });
 hamburger();
-hamburger_manu();

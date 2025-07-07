@@ -52,6 +52,11 @@ body {
   color: var(--white-color);
   font-size: var(--font-xl);
 }
+.nav-logo h1 a{
+  color: var(--white-color);
+  text-decoration: none;
+ 
+}
 
 .nav-links {
   display: flex;
@@ -326,7 +331,8 @@ button:disabled {
 /* Media Queries */
 @media (width <= 768px) {
   .nav-links {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     background-color: var(--primary-color);
     position: absolute;
     top: 100%;
@@ -337,7 +343,9 @@ button:disabled {
     gap: var(--gap-md);
   }
   .nav-links.active {
-    display: flex;
+   visibility: visible;
+   opacity: 1;
+   display: flex;
   }
   .hamburger {
     display: block;
@@ -359,9 +367,11 @@ button:disabled {
   .carousel-content {
     padding: 1rem;
   }
-  .nav-logo h1 {
+  .nav-logo h1 a{
     font-size: var(--font-lg);
+    
   }
+  
 }
 @media (width <= 480px) {
   .carousel-content {

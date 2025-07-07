@@ -1,5 +1,5 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
-import { hamburger, hamburger_manu } from "./utils.mjs";
+import { hamburger } from "./utils.mjs";
 const editPostForm = document.getElementById("editPostForm");
 const deletePostButton = document.getElementById("delete-button");
 const cancelBtn = document.querySelector(".cancel-button");
@@ -9,7 +9,7 @@ const contentInput = document.getElementById("content");
 const postId = new URLSearchParams(window.location.search).get("id");
 
 document.addEventListener("DOMContentLoaded", () => {
-  hamburger_manu();
+  hamburger();
   if (!postId) {
     alert("No Id found in the URl");
     return;

@@ -9,15 +9,26 @@ export function validPassword(password) {
 export function hamburger() {
   const navLinks = document.querySelector(".nav-links");
   const hamburger = document.querySelector(".hamburger");
-  hamburger.addEventListener("click", () => {
+  const navLinksAnchors = navLinks.querySelectorAll("a")
+
+  function toggleMenu(){
+    const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", String(!isExpanded));
     navLinks.classList.toggle("active");
-  });
+    navLinks.setAttribute("aria-hidden", String(isExpanded));
+    if(!isExpanded){
+      setTimeout(()=>{
+        navLinksAnchors[0]?.focus()
+      }, 100);
+    }
+
 }
-export function hamburger_manu(){
-const hamburger_manu = document.querySelector(".hamburger")
-hamburger_manu.addEventListener("keydown", (e)=>{
-  if(e.key === "Enter" || e.key === " "){
-    e.preventDefault();
-    hamburger_manu.click()
-  }
-})}
+  hamburger.addEventListener("click", toggleMenu);
+    hamburger.addEventListener("keydown", (e)=>{
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        toggleMenu();
+      }
+      });
+
+}
