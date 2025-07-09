@@ -189,3 +189,10 @@ logoutLink.addEventListener("click", () => {
   localStorage.removeItem("accessToken");
   window.location.href = "../index.html";
 });
+
+
+const userName = localStorage.getItem("username");
+const greetingElement = document.getElementById("greeting")
+ if("username" && "greetingElement"){
+  greetingElement.textContent = `Hi, ${userName}`
+ }

@@ -30,7 +30,10 @@ loginForm.addEventListener("submit", async (event) => {
     });
     const data = await response.json();
 
+
     if (response.ok) {
+      localStorage.setItem("username", data.data.name);
+
       saveToken(data.data.accessToken);
       window.location.href = "../post/manage-post.html";
     } else {
