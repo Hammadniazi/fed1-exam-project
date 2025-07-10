@@ -61,6 +61,7 @@ body {
 .nav-links {
   display: flex;
   gap: var(--gap-xxl);
+  align-items: center;
 }
 .nav-links a {
   color: var(--white-color);
@@ -71,8 +72,9 @@ body {
   color: var(--secondary-color);
 }
 .greeting {
-  display: block;
-  gap: var(--gap-s);
+  display: flex;
+  gap: var(--gap-md);
+  align-items: center;
 }
 .greeting span {
   color: var(--white-color);
@@ -81,7 +83,7 @@ body {
 .greeting a {
   background-color: var(--secondary-color);
   font-size: var(--gap-s);
-  padding: 5px 8px;
+  padding: 10px;
   border-radius: 4px;
 }
 .greeting a:hover {
@@ -257,6 +259,8 @@ button {
   background-color: var(--secondary-color);
   color: var(--white-color);
 }
+
+
 button:disabled {
   background-color: gray;
   cursor: not-allowed;

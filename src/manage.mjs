@@ -1,7 +1,7 @@
 import { blogApi_url, error_message_default } from "./constant.mjs";
+import { hamburger } from "./utils.mjs";
 
-
-const hamburger = document.querySelector(".hamburger");
+// const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const gridBlog = document.getElementById("gridBlog");
 const carousel = document.getElementById("carousel");
@@ -16,6 +16,7 @@ const logoutLink = document.getElementById("logoutLink");
 document.addEventListener("DOMContentLoaded", initializeBlog);
 function initializeBlog() {
   fetchBlogPosts(currentPage);
+  hamburger();
 }
 
 let currentSlide = 0;
@@ -155,9 +156,6 @@ function updatePagination() {
   paginationContainer.appendChild(nextButton);
 }
 
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
 
 prevBtn.addEventListener("click", () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
@@ -187,6 +185,7 @@ newPostBtn.addEventListener("click", () => {
 
 logoutLink.addEventListener("click", () => {
   localStorage.removeItem("accessToken");
+  localStorage.removeItem("username");
   window.location.href = "../index.html";
 });
 
