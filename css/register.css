@@ -90,3 +90,9 @@
     padding: 1rem;
   }
 }
+.error-message {
+  color: red;
+  font-size: var(--font-md);
+  
+
+}

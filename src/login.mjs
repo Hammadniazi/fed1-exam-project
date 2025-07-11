@@ -1,5 +1,10 @@
 import { error_message_default, loginApi_url } from "./constant.mjs";
 import { validateEmail, validPassword, hamburger } from "./utils.mjs";
+const emailError = document.getElementById("email-error");
+const passwordError = document.getElementById("password-error");
+const formError = document.getElementById("form-error");
+
+
 function saveToken(token) {
   localStorage.setItem("accessToken", token);
 }
@@ -12,12 +17,14 @@ loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+
   if (!validateEmail(email)) {
-    alert("Please enter a valid Email address");
+    emailError.textContent = "Please enter a valid email address"
+    
     return;
   }
   if (!validPassword(password)) {
-    alert("Password must be at least 6 characters long");
+    passwordError.textContent = "Password must be atleast 6 characters long!"
     return;
   }
   try {
@@ -37,7 +44,8 @@ loginForm.addEventListener("submit", async (event) => {
       saveToken(data.data.accessToken);
       window.location.href = "../post/manage-post.html";
     } else {
-      alert("Login failed! Please try again");
+      
+      formError.textContent = data.message || " Login Failed! Please try again."
     }
   } catch (error) {
     console.error(error_message_default, error?.message);

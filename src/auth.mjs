@@ -1,6 +1,11 @@
 import { registerApi_url, error_message_default } from "./constant.mjs";
 import { hamburger,  validateEmail, validPassword } from "./utils.mjs";
 
+const emailError = document.getElementById("email-error");
+const passwordError = document.getElementById("password-error");
+const confirmPasswordError = document.getElementById("password-confirm-error");
+const formError = document.getElementById("form-register-error");
+
 const registerForm = document.getElementById("register-form");
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -9,15 +14,15 @@ registerForm.addEventListener("submit", async (event) => {
   const confirmPassword = document.getElementById("confirmPassword").value;
 
   if (!validateEmail(email)) {
-    alert("Please enter a valid email address ");
+    emailError.textContent = "Please enter a valid email address!";
     return;
   }
   if (!validPassword(password)) {
-    alert("Password must be alteast 6 characters long");
+    passwordError.textContent = "Password must be 6 characters long";
     return;
   }
   if (password !== confirmPassword) {
-    alert("Password do not match");
+    confirmPasswordError.textContent= "Password do not match";
     return;
   }
   try {
@@ -35,9 +40,10 @@ registerForm.addEventListener("submit", async (event) => {
     const data = await response.json();
 
     if (response.ok) {
+      window.location.href = "./login.html"
       alert("You have successfully register");
     } else {
-      alert(data.message || "Registration failed. Please try again later.");
+      formError.textContent = data.message || "Registration failed. Please try again later.";
     }
   } catch (error) {
     console.error(error_message_default, error?.message);

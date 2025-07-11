@@ -7,7 +7,7 @@
       name="description"
       content="Access the Tech-Whiz admin dashboard by logging in with your credentials."
     />
-    <title>Login | Tech-Whiz Admin</title>
+    <title>Login | Tech-Whiz Admin Dashboard</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/register.css" />
     <script
@@ -27,7 +27,7 @@
           <a href="./login.html">Login</a>
           <a href="./register.html">Register</a>
         </div>
-        <div class="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu">
+        <div class="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-controls="nav-links" aria-expanded = "false ">
           <span></span>
           <span></span>
           <span></span>
@@ -48,12 +48,16 @@
                 placeholder="@stud.noroff.no"
                 required
               />
+              <p class="error-message" id="email-error">
+              </p>
             </div>
             <div class="form-details">
               <label for="password">Password</label>
               <input type="password" name="password" id="password" required />
+              <p class="error-message" id="password-error"></p>
             </div>
             <button type="submit" class="register-button">Login</button>
+            <p class="error-message" id="form-error"></p>
           </form>
           <p class="login-link">
             Don't have an account? <a href="./register.html">Register here</a>
@@ -68,7 +72,7 @@
           <p>Your source for the tech gadgets, reviews and innovations.</p>
         </div>
         <div class="footer-section">
-          <h3>Quicks Links</h3>
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="./login.html">Login</a></li>
@@ -97,7 +101,7 @@
         </div>
       </div>
       <div class="bottom">
-        <p>@copy, 2025 Tech-Whiz. All rights reserved.</p>
+        <p>&copy, 2025 Tech-Whiz. All rights reserved.</p>
       </div>
     </footer>
   </body>
