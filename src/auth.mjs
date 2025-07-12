@@ -9,6 +9,11 @@ const formError = document.getElementById("form-register-error");
 const registerForm = document.getElementById("register-form");
 registerForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+  // Clears previous errors
+  emailError.textContent = "";
+  passwordError.textContent = "";
+  confirmPasswordError.textContent = "";
+  formError.textContent = "";
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
