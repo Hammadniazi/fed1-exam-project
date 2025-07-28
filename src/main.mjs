@@ -158,4 +158,14 @@ const trimText = (text, maxLength) => {
     return text;
   }
 };
+// Scroll to top listner
+const scroll = document.getElementById("scrollToTop");
+scroll.addEventListener("click", scrollBtnToTop);
+
+function scrollBtnToTop(){
+  window.scrollTo({
+    top:0,
+    behavior: "smooth",
+  })
+}
 
